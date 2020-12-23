@@ -20,8 +20,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 app.use(require("./routes/api.js"));
 
 app.get("/exercise", function(req, res) {
-    // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "public/exercise.html"));
+  });
+
+  app.get("/stats", function(req, res) {
+    res.sendFile(path.join(__dirname, "public/stats.html"));
   });
   
 
